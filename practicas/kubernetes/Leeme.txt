@@ -1,0 +1,31 @@
+Super manual
+https://www.youtube.com/watch?v=DCoBcpOA7W4
+
+--levantar minikube
+minikube start
+
+--levantar minikube con varios nodos
+minikube start --nodes=2
+
+--levantar minikube con una versión específica
+minikube start --kubernetes-version=v1.23.6
+
+--levantar un node
+minikube node add
+
+--Iniciar 
+kubectl apply -f "manifiesto.yaml"
+
+
+--ver pods
+kubectl get pods
+
+--eliminar pod
+kubectl delete pod "idpod"
+
+
+--describir pod, servicio, nodo
+
+kubectl describe service "nombre servicio"
+
+
