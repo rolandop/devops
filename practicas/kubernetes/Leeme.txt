@@ -1,5 +1,7 @@
-Super manual
+Super manuales
 https://www.youtube.com/watch?v=DCoBcpOA7W4
+
+https://refactorizando.com/clusterip-vs-loadbalancer-vs-nodeport-vs-ingress-en-kubernetes/
 
 --levantar minikube
 minikube start
@@ -28,4 +30,36 @@ kubectl delete pod "idpod"
 
 kubectl describe service "nombre servicio"
 
+--crear un servicio y exponerlo
+kubectl expose service hello --type=NodePort --name=example-service
 
+
+--exponer kubernetes 
+
+kubectl proxy --port=8080
+
+Ingresar 
+http://localhost:8080/api/v1/proxy/namespaces/<NAMESPACE>/services/<SERVICE-NAME>/proxy
+
+
+--Borrar manifiestos
+kubectl delete -f "Nombre del manifiesto".yaml
+
+--ejecutar en el browser un servicio LoadBalancer en minikube
+minikube service "nombre del servicio"
+
+
+--Add ons de minilube
+minikube addons list
+
+
+--Habilitar ingress en minikube
+minikube addons enable ingress
+
+
+--Verifica que este corriendo ingress
+kubectl get pods -n ingress-nginx
+
+
+--Verifica los servicios de ingress
+kubectl -n ingress-nginx get svc
