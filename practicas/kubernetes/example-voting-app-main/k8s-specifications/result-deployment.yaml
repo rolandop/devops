@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: result
+  labels:
+    app: result
+    autor: rolando
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: result
+      autor: rolando
+  template:
+    metadata:
+      labels:
+        app: result
+        autor: rolando
+    spec:
+      containers:
+      - name: result
+        image: rolandop/voting_result
+        ports:
+        - containerPort: 80
